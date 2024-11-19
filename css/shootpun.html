@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+        padding :10px 20px;
+        font-size: 15px;
+        margin:10px;
+        cursor:pointer;}
+
+    </style>
+</head>
+<body>
+<h1>Selct Action</h1>
+<button id="movies" onclick="showMessage('movies')"> Shoot Movies</button>
+<button id="guns" onclick="showMessage('guns')"> Shoot guns</button>
+<button id="basketballs" onclick="showMessage('basketballs')"> Shoot basketballs</button>
+<div id="message"></div>
+<script>
+    function showMessage(action) {
+    let message =' ';
+    if (action === 'movies'){
+    message = 'Shooting movies' ;}
+     else if (action === 'guns'){
+    message = 'Shooting guns' ;}
+    else if (action === 'basketballs'){
+    message = 'Shooting basketballs' ;}
+    document.getElementById('message').textContent = message;}
+</script>
+</body>
+</html>

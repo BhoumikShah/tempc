@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="swapCase"></p>
+<script>
+    function swapCase(str) {
+      let newStr = '';
+      for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        newStr += char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+      }
+      return newStr;
+    }
+
+    let string3 = "HeLlO wOrLd";
+    let newString3 = swapCase(string3);
+    document.getElementById("swapCase").textContent = newString3;
+
+</script>
+</body>
+</html>

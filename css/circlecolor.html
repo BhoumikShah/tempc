@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: grey;
+        margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="circle" id="colorCircle"></div>
+<h1>Select a Color</h1>
+<form>
+    <input type="radio" id="red" name="color" value="Red">
+    <label for="red">Red</label><br>
+    <input type="radio" id="green" name="color" value="Green">
+    <label for="green">Green</label><br>
+    <input type="radio" id="blue" name="color" value="Blue">
+    <label for="blue">Blue</label><br>
+</form>
+<script>
+    function changeCircleColor() {
+    const colors = ['red', 'green', 'blue'];
+    for (let color of colors) {
+    let radio = document.getElementById(color);
+    if (radio.checked) {
+    document.getElementById('colorCircle').style.backgroundColor = radio.value;
+    break;
+    }
+    }
+    }
+
+    document.querySelectorAll('input[name="color"]').forEach(radio => {
+    radio.addEventListener('change', changeCircleColor);
+    });
+</script>
+</body>
+</html>

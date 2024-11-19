@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Employee(name, id) {
+        this.name = name;
+        this.id = id;
+    }
+    Employee.prototype.salary = 0;
+    Employee.prototype.setRaise = function() {
+        this.salary += this.salary * 0.15;
+    };
+    const emp1 = new Employee('Shah', 101);
+    emp1.salary = 50000;
+    emp1.setRaise();
+    document.write(`<p>Employee: ${emp1.name}, ID: ${emp1.id}, Salary after raise: $${emp1.salary}</p>`);
+</script>
+</body>
+</html>

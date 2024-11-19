@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    function Circle(radius) {
+      this.radius = radius;
+      this.calculateCircumference = () => 2 * Math.PI * this.radius;
+    }
+
+    const myCircle = new Circle(5);
+    document.getElementById("result").textContent = "Circumference: " + myCircle.calculateCircumference();
+</script>
+</body>
+</html>

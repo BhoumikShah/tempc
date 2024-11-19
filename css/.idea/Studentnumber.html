@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function TestString(str) {
+        const regex =/^[1234][A-Z]{2}|^\d{2}[A-Z]{2}|^\d{3}$/
+        if (regex.test(str)) {
+        document.write("Valid");}else{
+        document.write("invalid");}}
+        const inputstr = prompt("enter uni stuff");
+        TestString(inputstr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

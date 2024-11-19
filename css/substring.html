@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="countSubstring"></p>
+<script>
+  function countSubstring(str, subStr) {
+    let count = 0;
+    let index = str.indexOf(subStr);
+
+    while (index !== -1) {
+      count++;
+      index = str.indexOf(subStr, index + 1);
+    }
+
+    return count;
+  }
+
+  let string4 = "hello world hello";
+  let substring = "hello";
+  let count = countSubstring(string4, substring);
+  document.getElementById("countSubstring").textContent = count;
+</script>
+</body>
+</html>

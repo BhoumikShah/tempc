@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="date" id="birthdate">
+<button onclick="calculateAge()">Calculate Age</button>
+<p id="age"></p>
+<script>
+    function calculateAge() {
+      const birthdate = document.getElementById("birthdate").value;
+      const today = new Date();
+      const age = today.getFullYear() - new Date(birthdate).getFullYear();
+      document.getElementById("age").textContent = "Your age is: " + age;
+    }
+</script>
+</body>
+</html>

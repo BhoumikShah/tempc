@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Employee(name, age, salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    Employee.prototype.displayInfo = function() {
+        return `Name: ${this.name}, Age: ${this.age}, Salary: $${this.salary}`;
+    };
+
+    function Salesman(name, age, salary, commission) {
+        Employee.call(this, name, age, salary);
+        this.commission = commission;
+    }
+
+    Salesman.prototype = Object.create(Employee.prototype);
+    Salesman.prototype.constructor = Salesman;
+    Salesman.prototype.displayInfo = function() {
+        return `${Employee.prototype.displayInfo.call(this)}, Commission: $${this.commission}`;
+    };
+
+    function Manager(name, age, salary, department) {
+        Employee.call(this, name, age, salary);
+        this.department = department;
+    }
+
+    Manager.prototype = Object.create(Employee.prototype);
+    Manager.prototype.constructor = Manager;
+    Manager.prototype.displayInfo = function() {
+        return `${Employee.prototype.displayInfo.call(this)}, Department: ${this.department}`;
+    };
+
+    const salesman = new Salesman('John Doe', 35, 50000, 5000);
+    const manager = new Manager('Jane Smith', 42, 75000, 'Sales');
+
+    document.write(`<p>Salesman: ${salesman.displayInfo()}</p>`);
+    document.write(`<p>Manager: ${manager.displayInfo()}</p>`);
+</script>
+</body>
+</html>

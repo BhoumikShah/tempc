@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="clock"></div>
+<script>
+    function Clock(format) {
+      this.format = format;
+      this.displayTime = function() {
+        const now = new Date();
+        const time = now.toLocaleTimeString([], {
+          hour12: this.format === "12h" // Automatically handles AM/PM
+        });
+        document.getElementById("clock").textContent = time;
+      };
+    }
+
+    const format = prompt("Choose time format: 12h or 24h");
+    const myClock = new Clock(format);
+    myClock.displayTime();
+    setInterval(() => myClock.displayTime(), 1000); // Update time every second
+</script>
+</body>
+</html>

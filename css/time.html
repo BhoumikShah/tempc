@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="clock"></div>
+<script>
+    function Clock() {
+      this.setTime = function() {
+        const now = new Date();
+        this.hours = now.getHours();
+        this.minutes = now.getMinutes();
+        this.seconds = now.getSeconds();
+      };
+
+      this.displayTime = function() {
+        const time = `${this.hours.toString().padStart(2, '0')}:${this.minutes.toString().padStart(2, '0')}:${this.seconds.toString().padStart(2, '0')}`;
+        document.getElementById("clock").textContent = time;
+      };
+    }
+
+    const myClock = new Clock();
+    myClock.setTime();
+    myClock.displayTime();
+
+</script>
+</body>
+</html>

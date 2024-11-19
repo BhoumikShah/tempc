@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Employee(name) {
+        this._name = name;
+    }
+    Employee.prototype = {
+        get name() { return this._name; },
+        set name(value) { this._name = value; }
+    };
+    function Salesman(name) {
+        Employee.call(this, name);
+    }
+    Salesman.prototype = Object.create(Employee.prototype);
+    function Manager(name) {
+        Employee.call(this, name);
+    }
+    Manager.prototype = Object.create(Employee.prototype);
+    const salesman = new Salesman('John');
+    const manager = new Manager('Jane');
+    salesman.name = 'Bhoumik ';
+    manager.name = 'Shah ';
+    document.write(`<p>Salesman: ${salesman.name}</p>`);
+    document.write(`<p>Manager: ${manager.name}</p>`);
+</script>
+</body>
+</html>
